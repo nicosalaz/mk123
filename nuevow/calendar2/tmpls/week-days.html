@@ -1,0 +1,50 @@
+<% _.each(events, function(event){ %>
+<div class="cal-row-fluid">
+	<div class="cal-cell<%= event.days%> cal-offset<%= event.start_day %> day-highlight dh-<%= event['class'] %>" data-event-class="<%= event['class'] %>">
+		<a href="<%= event.url ? event.url : 'javascript:void(0)' %>" data-event-id="<%= event.id %>" class="cal-event-week event<%= event.id %>">
+			<% if (event.title !== "") { %>
+				<span style="background-color: aqua;"><%= event.title %></span><br>
+			<% } %>
+			<% if (event.title2 !== "") { %>
+				<span style="background-color:cornflowerblue"><%= event.title2 %></span><br>
+			<% } %>
+			<% if (event.title3 !== "") { %>
+				<span style="background-color:greenyellow"><%= event.title3 %></span><br>
+			<% } %>
+			<% if (event.title4 !== "") { %>
+				<span style="background-color:darksalmon"><%= event.title4 %></span><br>
+			<% } %>
+			<% if (event.title5 !== "") { %>
+				<span style="background-color:rgb(228, 218, 77)"><%= event.title5 %></span><br>
+			<% } %>
+			<% if (event.title6 !== "") { %>
+				<span style="background-color:rgb(220, 110, 235)"><%= event.title6 %></span><br>
+			<% } %>
+			<% if (event.title7 !== "") { %>
+				<span style="background-color:rgb(47, 127, 138)"><%= event.title7 %></span><br>
+			<% } %>
+			<% if (event.title8 !== "") { %>
+				<span style="background-color:rgb(231, 142, 169)"><%= event.title8 %></span><br>
+			<% } %>
+			<% if (event.title9 !== "") { %>
+				<span style="background-color:rgb(69, 167, 77)"><%= event.title9 %></span><br>
+			<% } %>
+			<% if (event.title10 !== "") { %>
+				<span style="background-color:rgb(196, 196, 224)"><%= event.title10 %></span><br>
+			<% } %>
+			<% if (event.title11 !== "") { %>
+				<span style="background-color:rgb(245, 182, 182)"><%= event.title11 %></span>
+			<% } %>
+			<% if (event.title12 !== "") { %>
+				<span style="background-color:rgb(75, 235, 75)"><%= event.title12 %></span>
+			<% } %>
+			<% if (event.title13 !== "") { %>
+				<span style="background-color:rgb(124, 145, 238)"><%= event.title13 %></span>
+			<% } %>
+			<% if (event.title14 !== "") { %>
+				<span style="background-color:rgb(247, 172, 102)"><%= event.title14 %></span>
+			<% } %>
+		</a>
+	</div>
+</div>
+<% }); %>

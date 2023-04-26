@@ -1,0 +1,136 @@
+
+    .show {
+    z-index: 1000;
+    width: 20rem;
+    position: absolute;
+    background-color: #e41c6f;
+    border: 1px solid rgb(39, 12, 32);
+    color: black;
+    padding: 2px;
+    display: block;
+    margin: 0;
+    list-style-type: none;
+    list-style: none;
+    }
+    
+    .hide {
+    display: none;
+    }
+    
+    .show li {
+    list-style: none;
+    }
+    
+    .show a {
+    border: 0 !important;
+    text-decoration: none;
+    }
+    
+    .show a:hover {
+    text-decoration: underline !important;
+    }
+
+
+
+table th { font-weight: bold; }
+table td, table th { padding: 9px 10px; text-align: left; }
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+	
+	table.responsive { margin-bottom: 0;}
+	
+	.pinned { position: absolute; left: 0; top: 0; background: #fff; width: 35%; overflow: hidden; overflow-x: scroll; border-right: 1px solid #ccc; border-left: 1px solid #ccc; }
+	.pinned table { border-right: none; border-left: none; width: 100%; }
+	.pinned table th, .pinned table td { white-space: nowrap; }
+	.pinned td:last-child { border-bottom: 0; }
+	
+	div.table-wrapper { position: relative; margin-bottom: 20px; overflow: hidden; border-right: 1px solid #ccc; }
+	div.table-wrapper div.scrollable { margin-left: 35%; }
+	div.table-wrapper div.scrollable { overflow: scroll; overflow-y: hidden; }	
+	
+	table.responsive td, table.responsive th { position: relative; white-space: nowrap; overflow: hidden; }
+	table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td { display: none; }
+	
+	
+}
+
+.numerox{
+    width: 5rem;
+}
+
+.texto2{
+    width: 25rem;
+}
+
+#batch td, #filler td, #klockner td , #production td {
+    border: none !important;
+}
+
+#filler td{
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+#klockner td{
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+.titulox{
+    background:rgb(30, 94, 116);
+    color:white;
+    font-size: 1.8rem;
+    text-align:center
+}
+.titulox2{
+    background:rgb(30, 94, 116);
+    color:white;
+    font-size: 1.2rem;
+    text-align:center;
+    border: thin solid;
+    border-color: #fff;
+    padding: 0.2rem;
+    
+}
+
+.uno {
+    background:red;
+    color:white;
+    text-align:center;
+    padding: unset;
+    vertical-align: middle;
+    font-size: 1.8rem;
+  }
+  .dos {
+    background:silver;
+    text-align:center;
+    padding: unset;
+    font-size: 1.8rem;
+  }
+  .tres {
+    background:white;
+    color:black;
+    text-align:center;
+    padding: unset;
+  }
+  .cuatro {
+    background:transparent;
+    color:black;
+    width: 7rem;
+    height: 3.5rem;
+    margin: 0rem;
+    font-size: 1rem;
+    border: none;
+  }
+
+  textarea::-webkit-scrollbar {
+    width: 1em;
+}
+
+textarea::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgb(190, 10, 10);
+}

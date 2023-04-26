@@ -1,0 +1,27 @@
+<span id="cal-slide-tick" style="display: none"></span>
+<div id="cal-slide-content" class="cal-event-list">
+	<ul class="unstyled list-unstyled">
+		<% _.each(events, function(event) { %>
+			<li>
+				<span class="pull-left event <%= event['class'] %>"></span>&nbsp;
+				<a href="<%= event.url ? event.url : 'javascript:void(0)' %>" data-event-id="<%= event.id %>"
+					data-event-class="<%= event['class'] %>" class="event-item">
+
+					<% if (event.title !== "") { %>
+						<span style="background-color: aqua;"><%= event.title %></span><br>
+					<% } %>
+					<% if (event.title2 !== "") { %>
+						<span style="background-color:cornflowerblue"><%= event.title2 %></span><br>
+					<% } %>
+					<% if (event.title3 !== "") { %>
+						<span style="background-color:greenyellow"><%= event.title3 %></span><br>
+					<% } %>
+					<% if (event.title4 !== "") { %>
+						<span style="background-color:darksalmon"><%= event.title4 %></span><br>
+					<% } %>
+
+				</a>
+			</li>
+		<% }) %>
+	</ul>
+</div>

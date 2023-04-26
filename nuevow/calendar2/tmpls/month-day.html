@@ -1,0 +1,52 @@
+<div class="cal-month-day <%= cls %>">
+	<span class="pull-right" style="font-size: 1.5rem;color:darkblue"
+	data-cal-date="<%= data_day %>" data-cal-view="day" data-toggle="tooltip" title="<%= tooltip %>"><%= day %></span>
+	<% if (events.length > 0) { %>
+		<div class="events-list" data-cal-start="<%= start %>" data-cal-end="<%= end %>">
+			<% _.each(events, function(event) { %>
+				<% if (event.title !== "") { %>
+					<span style="background-color: aqua;padding:0.2rem;"><%= event.title %></span><br>
+				<% } %>
+				<% if (event.title2 !== "") { %>
+					<span style="background-color:cornflowerblue;padding:0.2rem;"><%= event.title2 %></span><br>
+				<% } %>
+				<% if (event.title3 !== "") { %>
+					<span style="background-color:greenyellow;padding:0.2rem;"><%= event.title3 %></span><br>
+				<% } %>
+				<% if (event.title4 !== "") { %>
+					<span style="background-color:darksalmon;padding:0.2rem;"><%= event.title4 %></span><br>
+				<% } %>
+				<% if (event.title5 !== "") { %>
+					<span style="background-color:rgb(228, 218, 77);padding:0.2rem;"><%= event.title5 %></span><br>
+				<% } %>
+				<% if (event.title6 !== "") { %>
+					<span style="background-color:rgb(220, 110, 235);padding:0.2rem;"><%= event.title6 %></span><br>
+				<% } %>
+				<% if (event.title7 !== "") { %>
+					<span style="background-color:rgb(157, 228, 238);padding:0.2rem;"><%= event.title7 %></span><br>
+				<% } %>
+				<% if (event.title8 !== "") { %>
+					<span style="background-color:rgb(231, 142, 169);padding:0.2rem;"><%= event.title8 %></span><br>
+				<% } %>
+				<% if (event.title9 !== "") { %>
+					<span style="background-color:rgb(69, 167, 77);padding:0.2rem;"><%= event.title9 %></span><br>
+				<% } %>
+				<% if (event.title10 !== "") { %>
+					<span style="background-color:rgb(196, 196, 224);padding:0.2rem;"><%= event.title10 %></span><br>
+				<% } %>
+				<% if (event.title11 !== "") { %>
+					<span style="background-color:rgb(245, 182, 182);padding:0.2rem;"><%= event.title11 %></span>
+				<% } %>
+				<% if (event.title12 !== "") { %>
+					<span style="background-color:rgb(180, 236, 133);padding:0.2rem;"><%= event.title12 %></span>
+				<% } %>
+				<% if (event.title13 !== "") { %>
+					<span style="background-color:rgb(152, 161, 247);padding:0.2rem;"><%= event.title13 %></span>
+				<% } %>
+				<% if (event.title14 !== "") { %>
+					<span style="background-color:rgb(243, 235, 129);padding:0.2rem;"><%= event.title14 %></span>
+				<% } %>
+			<% }); %>
+		</div>
+	<% } %>
+</div>
