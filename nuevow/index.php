@@ -69,7 +69,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-        <div class="container-fluid  ">
+        <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -127,14 +127,14 @@
     <input type="hidden" name="opcionx" id="opcionx" value="home">
 
 
-    <section class="section-1 center" id="section-5">
+    <section class="section-1 center" id="section-5" style="display: none;">
 
         <iframe src="calendar2" frameborder="0" width="110%" height="1000"></iframe>
 
     </section>
 
 
-    <section class="section-1 center" id="section-1">
+    <section class="section-1 center" id="section-1" style="display: none;">
 
         <iframe src="calendar" frameborder="0" width="110%" height="1000"></iframe>
 
@@ -195,13 +195,19 @@
 
 
     <!-- Section 2 -->
-    <section class="section-2" id="section-2">
+    <section class="section-2 container-fluid d-flex flex-column text-center" style="" id="section-2" style="display: none;">
         <?php echo $nivelx. " - " .$userx; ?>
+        <div class="row" style="">
         <h1 class="section-heading section-2-heading">Filling Process</h1>
-
-        <a class="button" style='z-index: 5' onclick="go_section('section-2b')">Add Process</a>
-
-        <select name="savedx2" id="savedx2" onchange="verhistorico(opcionx.value,this.value)" style="width:15rem">
+        </div>
+        <div class="row align-self-center w-100 mt-1 mb-1">
+            <div class="col-10 w-100">
+                <button class="btn btn-primary" style="z-index: 5" data-bs-toggle="modal" data-bs-target="#modalAddProcess" onclick="go_section('section-2b')">
+                    Add Process
+                </button>
+            </div> 
+        </div>
+        <select class="form-select mt-1 mb-5" name="savedx2" id="savedx2" onchange="verhistorico(opcionx.value,this.value)" style="width:15rem;align-self: center;">
             <option value=''></option>
             <?php  $sqlzb= "SELECT DISTINCT lot_number FROM process WHERE saved='SI'";
                   $resultb = mysqli_query($conn, $sqlzb);
@@ -214,31 +220,31 @@
         </select>
 
 
-        <div class="container">
-            <table class="responsive">
-                <thead>
+        <div class="table-responsive">
+            <table class="table table-bordered border-black">
+                <thead class="bg-info h-auto">
                     <tr>
-                        <th class="titulox2">Start<br>Date</th>
-                        <th class="titulox2">Lot <br> Number</th>
-                        <th class="titulox2">Pick List</th>
-                        <th class="titulox2">Warehouse</th>
-                        <th class="titulox2">Material<br>Stage</th>
-                        <th class="titulox2">Room<br>Clearence</th>
-                        <th class="titulox2">Balance<br>Weight</th>
-                        <th class="titulox2">Visual<br>Inspection</th>
-                        <th class="titulox2">Set-up<br>Line</th>
-                        <th class="titulox2">Sub-divide</th>
-                        <th class="titulox2">Start-up<br> Gravimetrics</th>
-                        <th class="titulox2">Challenges</th>
-                        <th class="titulox2">First<br>Blister</th>
-                        <th class="titulox2">Counter</th>
-                        <th class="titulox2">Total<br>Blister in<br>Shippers</th>
-                        <th class="titulox2">Reserve<br>Release<br>Samples</th>
-                        <th class="titulox2">Target<br>Weight</th>
-                        <th class="titulox2">QC Sample</th>
-                        <th class="titulox2">Production<br>Yield</th>
-                        <th class="titulox2">Process<br>Yield</th>
-                        <th class="titulox2">End<br>Date</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Start Date</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Lot Number</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Pick List</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Ware house</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Material Stage</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Room Clearence</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Balance Weight</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Visual Inspection</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Set-upLine</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Sub-divide</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Start-up Gravimetrics</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Challenges</th>
+                        <th class="titulox2 p-0 m-0 align-middle">First Blister</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Counter</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Total Blister inShippers</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Reserve Release Samples</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Target Weight</th>
+                        <th class="titulox2 p-0 m-0 align-middle">QC Sample</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Production Yield</th>
+                        <th class="titulox2 p-0 m-0 align-middle">Process Yield</th>
+                        <th class="titulox2 p-0 m-0 align-middle">End Date</th>
 
                     </tr>
                 </thead>
@@ -371,7 +377,7 @@
     </section>
 
     <!-- Section 3 -->
-    <section class="section-2" id="section-3">
+    <section class="section-2" id="section-3" style="display: none;">
 
         <iframe name="fillingdaily" src="daily.php" scrolling="no" frameborder="0" width="100%" height="5000"></iframe>
 
@@ -379,7 +385,7 @@
     <!-- End of Section 3 -->
 
     <!-- Section 4 -->
-    <section class="section-2b" id="section-2b" style="display:none">
+    <!-- <section class="section-2b" id="section-2b" style="display:none">
         <button class="botonx" style="margin-left:50%" onclick="cerrarsection()">X</button>
         <h2 class="section-heading ">Add Process</h2>
         <div class="container">
@@ -391,7 +397,30 @@
                     onclick="enviarform('f_filling1','section-2')" />
             </form>
         </div>
-    </section>
+    </section> -->
+    <!-- modal add process -->
+    <div class="modal fade" id="modalAddProcess" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Process</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="contact-form center" id="f_filling1" method="post" action="consultas.php"
+                    enctype="multipart/form-data" target="consultasx">
+                    <input class="form-control" type="hidden" name="filling1" id="filling1" value="X" />
+                    <label class="form-label" for="lot_number1">Lot Number</label>
+                    <input class="form-control" type="text" placeholder="Lot Number" name="lot_number1" id="lot_number1" />
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" onclick="enviarform('f_filling1','section-2')">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <section class="section-2c" id="section-2c" style="display:none">
         <button class="botonx" style="margin-left:50%" onclick="cerrarsection()">X</button>
@@ -460,7 +489,7 @@
     <!-- End of Section 4 -->
 
     <!-- Section 6 -->
-    <section class="section-6" id="section-6">
+    <section class="section-6" id="section-6" style="display: none;">
 
         <div class="container">
 
@@ -486,7 +515,7 @@
 
 
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 
 
     <script src="contextmenu.js"></script>
@@ -498,6 +527,7 @@
         document.getElementById("section-2").style.display = "flex";
     }
     </script>
+
     <!-- Bootstrap JavaScript y dependencias -->
 
 

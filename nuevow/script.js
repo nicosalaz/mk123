@@ -48,7 +48,8 @@ window.addEventListener("resize", () => {
 
  function go_section(X){
         var celdaw= document.getElementById("cell4").value;
-        
+        var valor = "section-3";
+        console.log("otra sección");
         if (celdaw=='counter' ||
             celdaw=='total_blister_in_shippers' ||
             celdaw=='reserve_release_samples' || 
@@ -67,17 +68,18 @@ window.addEventListener("resize", () => {
         location.href='logout.php';
       } else {
           document.getElementById("opcionx").value =X;
-          document.getElementById("section-1").style.display="none";
-          document.getElementById("section-2").style.display="none";
-          document.getElementById("section-3").style.display="none";
-          document.getElementById("section-4").style.display="none";
-          document.getElementById("section-5").style.display="none";
-          document.getElementById("section-6").style.display="none";
-          document.getElementById("section-2b").style.display="none";
-          document.getElementById("section-2c").style.display="none";
-          document.getElementById(X).style.display="flex";
+          document.getElementById("section-1").hidden=true;
+          document.getElementById("section-2").hidden=true;
+          document.getElementById(valor).hidden=true;
+          document.getElementById("section-4").hidden=true;
+          document.getElementById("section-5").hidden=true;
+          document.getElementById("section-6").hidden=true;
+          // document.getElementById("section-2b").style.display="none";
+          document.getElementById("section-2c").hidden=true;
+          document.getElementById(String(X)).hidden=false;
+          // document.getElementById(String(X)).style.display="flex";
           setTimeout(function(){ 
-            document.getElementById("rmenu2").style.display="none";
+            // document.getElementById("rmenu2").style.display="none";
             }, 100);
       }
 

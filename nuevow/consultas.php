@@ -7,7 +7,9 @@ session_start();
 
     $lot_number = $_POST["lot_number1"] ;
 
-    if ($lot_number<>"") {
+    print "<script languaje='javascript'>alert('Fill all $lot_number the fields and try again');</script>";
+    
+    if ($lot_number <> "") {
        
             $sql= "INSERT INTO process (lot_number) VALUES ('$lot_number')";                       
             $result = mysqli_query($conn, $sql);

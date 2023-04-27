@@ -19,8 +19,8 @@ date_default_timezone_set("America/Bogota");
     $username = "root";
     $password = "";
 
-    $conexion = new mysqli($servername, $username, $password, $database,3306);	
- $conexion->set_charset('utf8');
+    $conexion = new mysqli($servername, $username, $password, $database,3306);
+    $conexion->set_charset('utf8');
     if ($conexion->connect_errno) {
         echo "Error al conectar la base de datosssss {$conexion->connect_errno}";
     }
