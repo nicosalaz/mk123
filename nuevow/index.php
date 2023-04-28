@@ -510,24 +510,6 @@
 
     <iframe name="consultasx" src="consultas.php" frameborder="0" style="height:0.1rem"></iframe>
 
-
-
-
-
-
-    <script src="./script.js"></script>
-
-
-    <script src="contextmenu.js"></script>
-
-    <script>
-    function cerrarsection() {
-        document.getElementById("section-2b").style.display = "none";
-        document.getElementById("section-2c").style.display = "none";
-        document.getElementById("section-2").style.display = "flex";
-    }
-    </script>
-
     <!-- Bootstrap JavaScript y dependencias -->
 
 
@@ -538,6 +520,18 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
     integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous">
+</script>
+<script src="script.js"></script>
+
+
+<script src="contextmenu.js"></script>
+
+<script>
+function cerrarsection() {
+    document.getElementById("section-2b").style.display = "none";
+    document.getElementById("section-2c").style.display = "none";
+    document.getElementById("section-2").style.display = "flex";
+}
 </script>
 
 </html>
