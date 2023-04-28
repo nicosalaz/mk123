@@ -48,8 +48,6 @@ window.addEventListener("resize", () => {
 
  function go_section(X){
         var celdaw= document.getElementById("cell4").value;
-        var valor = "section-3";
-        console.log("otra sección");
         if (celdaw=='counter' ||
             celdaw=='total_blister_in_shippers' ||
             celdaw=='reserve_release_samples' || 
@@ -70,7 +68,7 @@ window.addEventListener("resize", () => {
           document.getElementById("opcionx").value =X;
           document.getElementById("section-1").hidden=true;
           document.getElementById("section-2").hidden=true;
-          document.getElementById(valor).hidden=true;
+          document.getElementById("section-3").hidden=true;
           document.getElementById("section-4").hidden=true;
           document.getElementById("section-5").hidden=true;
           document.getElementById("section-6").hidden=true;

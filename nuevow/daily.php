@@ -6,7 +6,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     <!-- <link
       rel="stylesheet"
@@ -118,32 +120,37 @@
 
  
 
-  <div class="container">
-      <!-- Section 1 -->
-
-
-      <input type="hidden" name="opcionx2" id="opcionx2" value="home">
-   
+  <div class="container-fluid d-flex flex-column">
+      <!-- Section 1 -->   
 
       <!-- Section 3 -->
-      <section class="section-3" id="section-3">
-        <h1 class="section-heading section-3-heading">Filling Daily Status</h1>
-            <input type="hidden" name="concolor" id="concolor">
-
-              <a class="button" style='z-index:5' onclick="go_section2('section-3b')">Add Status</a>
-
-              <select name="savedx" id="savedx" 
-                    onchange="verhistorico2(opcionx2.value,this.value)" style="width:15rem">
-                    <option value=''></option>
-                    <?php  $sqlzb= "SELECT DISTINCT lot_number FROM status WHERE saved='SI'";
-                    $resultb = mysqli_query($conn, $sqlzb);
-                        while($rowx = mysqli_fetch_array($resultb) ){ 
-                          $lotnumber= $rowx[0];
-                          echo "<option value='$lotnumber'>$lotnumber</option>"; 
-                      } ?>
-                      <option value='sintotal'>Current</option>
-                      
+      <section class="section-3 d-flex flex-column" id="section-3">
+        <div class="row">
+          <input type="hidden" name="opcionx2" id="opcionx2" value="home">
+          <h1 class="w-100 text-center" >Filling Daily Status</h1>
+          <input type="hidden" name="concolor" id="concolor">
+        </div>
+        <div class="row">
+          <div class="w-100 d-flex justify-content-center">
+            <button type="button" class="btn btn-primary btn-lg" style="z-index:5" data-bs-toggle="modal" data-bs-target="#modalAddProc">Add Status</button>
+            <!--  onclick="go_section2('section-3b')" -->
+          </div>
+        </div>
+        <div class="row pt-3 d-flex justify-content-center">
+          <div class="col-3">
+            <select class="form-select" name="savedx" id="savedx" onchange="verhistorico2(opcionx2.value,this.value)">
+              <option value=''></option>
+              <?php  $sqlzb= "SELECT DISTINCT lot_number FROM status WHERE saved='SI'";
+              $resultb = mysqli_query($conn, $sqlzb);
+                  while($rowx = mysqli_fetch_array($resultb) ){ 
+                    $lotnumber= $rowx[0];
+                    echo "<option value='$lotnumber'>$lotnumber</option>"; 
+                } ?>
+                <option value='sintotal'>Current</option>
+                
             </select>
+          </div>
+        </div>
          
       <div class="container">
 
@@ -390,7 +397,7 @@
       <iframe id="observationsx" name="observationsx" src="observations.php" scrolling="no" frameborder="0" width="95%" height="1500"></iframe>
     </section>
 
-    <section class="section-3b" id="section-3b" style="display:none">
+    <!-- <section class="section-3b" id="section-3b" style="display:none">
     <button class="botonx" style="margin-left:50%" onclick="cerrarsection()">X</button>
       <h2 class="section-heading">Add Status</h2>
       <div class="container">
@@ -402,7 +409,31 @@
           <input type="button" value="Submit" class="contact-form-btn"  onclick="enviarform('f_filling2','section-3')" />
         </form>
       </div>
-    </section>
+    </section> -->
+    <!-- MODAL -->
+    <div class="modal fade" id="modalAddProc" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Process</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form  class="contact-form center" id="f_filling2" method="post" 
+                action="consultas.php" enctype="multipart/form-data" target="consultasx">
+              <input type="hidden" class="form-control" name="filling2" id="filling2" value='X'/>
+              <input type="text" class="form-control" placeholder="Shift" name="shift2" id="shift2" />
+              <input type="text" class="form-control" placeholder="Lot Number" name="lot_number2" id="lot_number2" />        
+              <input type="button" class="form-control" value="Submit" class="contact-form-btn"  onclick="enviarform('f_filling2','section-3')" />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="enviarform('f_filling1','section-2')">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
     
         <form id="finaliza" method="post" 
             action="consultas.php" enctype="multipart/form-data" target="consultasx">       
@@ -472,6 +503,12 @@
           location.href='?opc='+S+'&lotn='+X;
       }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+    integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous">
+</script>
 
   </body>
 </html>
