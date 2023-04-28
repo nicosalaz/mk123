@@ -385,7 +385,7 @@
     <!-- End of Section 3 -->
 
     <!-- Section 4 -->
-    <!-- <section class="section-2b" id="section-2b" style="display:none">
+    <section class="section-2b" id="section-2b" style="display:none">
         <button class="botonx" style="margin-left:50%" onclick="cerrarsection()">X</button>
         <h2 class="section-heading ">Add Process</h2>
         <div class="container">
@@ -397,7 +397,7 @@
                     onclick="enviarform('f_filling1','section-2')" />
             </form>
         </div>
-    </section> -->
+    </section>
     <!-- modal add process -->
     <div class="modal fade" id="modalAddProcess" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
