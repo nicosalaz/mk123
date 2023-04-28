@@ -196,183 +196,183 @@
 
     <!-- Section 2 -->
     <section class="section-2" id="section-2" style="display: none;">
-    <div class="container-fluid d-flex flex-column text-center">
-        <?php echo $nivelx. " - " .$userx; ?>
-            <div class="row" style="">
-            <h1 class="section-heading section-2-heading">Filling Process</h1>
-            </div>
-            <div class="row align-self-center w-100 mt-1 mb-1">
-                <div class="col-10 w-100">
-                    <button class="btn btn-primary" style="z-index: 5" data-bs-toggle="modal" data-bs-target="#modalAddProcess" onclick="go_section('section-2b')">
-                        Add Process
-                    </button>
-                </div> 
-            </div>
-            <select class="form-select mt-1 mb-5" name="savedx2" id="savedx2" onchange="verhistorico(opcionx.value,this.value)" style="width:15rem;align-self: center;">
-                <option value=''></option>
-                <?php  $sqlzb= "SELECT DISTINCT lot_number FROM process WHERE saved='SI'";
-                    $resultb = mysqli_query($conn, $sqlzb);
-                        while($rowx = mysqli_fetch_array($resultb) ){ 
-                            $lotnumber= $rowx[0];
-                            echo "<option value='$lotnumber'>$lotnumber</option>"; 
-                        } ?>
-                <option value='sintotal'>Current</option>
+        <div class="container-fluid d-flex flex-column text-center">
+            <?php echo $nivelx. " - " .$userx; ?>
+                <div class="row" style="">
+                <h1 class="section-heading section-2-heading">Filling Process</h1>
+                </div>
+                <div class="row align-self-center w-100 mt-1 mb-1">
+                    <div class="col-10 w-100">
+                        <button class="btn btn-primary" style="z-index: 5" data-bs-toggle="modal" data-bs-target="#modalAddProcess" onclick="go_section('section-2b')">
+                            Add Process
+                        </button>
+                    </div> 
+                </div>
+                <select class="form-select mt-1 mb-5" name="savedx2" id="savedx2" onchange="verhistorico(opcionx.value,this.value)" style="width:15rem;align-self: center;">
+                    <option value=''></option>
+                    <?php  $sqlzb= "SELECT DISTINCT lot_number FROM process WHERE saved='SI'";
+                        $resultb = mysqli_query($conn, $sqlzb);
+                            while($rowx = mysqli_fetch_array($resultb) ){ 
+                                $lotnumber= $rowx[0];
+                                echo "<option value='$lotnumber'>$lotnumber</option>"; 
+                            } ?>
+                    <option value='sintotal'>Current</option>
 
-            </select>
-        <div class="table-responsive">
-            <table class="table table-bordered border-black">
-                <thead class="bg-info h-auto">
-                    <tr>
-                        <th class="titulox2 p-0 m-0 align-middle">Start Date</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Lot Number</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Pick List</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Ware house</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Material Stage</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Room Clearence</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Balance Weight</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Visual Inspection</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Set-upLine</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Sub-divide</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Start-up Gravimetrics</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Challenges</th>
-                        <th class="titulox2 p-0 m-0 align-middle">First Blister</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Counter</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Total Blister inShippers</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Reserve Release Samples</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Target Weight</th>
-                        <th class="titulox2 p-0 m-0 align-middle">QC Sample</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Production Yield</th>
-                        <th class="titulox2 p-0 m-0 align-middle">Process Yield</th>
-                        <th class="titulox2 p-0 m-0 align-middle">End Date</th>
+                </select>
+            <div class="table-responsive">
+                <table class="table table-bordered border-black">
+                    <thead class="bg-info h-auto">
+                        <tr>
+                            <th class="titulox2 p-0 m-0 align-middle">Start Date</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Lot Number</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Pick List</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Ware house</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Material Stage</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Room Clearence</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Balance Weight</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Visual Inspection</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Set-upLine</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Sub-divide</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Start-up Gravimetrics</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Challenges</th>
+                            <th class="titulox2 p-0 m-0 align-middle">First Blister</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Counter</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Total Blister inShippers</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Reserve Release Samples</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Target Weight</th>
+                            <th class="titulox2 p-0 m-0 align-middle">QC Sample</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Production Yield</th>
+                            <th class="titulox2 p-0 m-0 align-middle">Process Yield</th>
+                            <th class="titulox2 p-0 m-0 align-middle">End Date</th>
 
-                    </tr>
-                </thead>
-                <tbody>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                    <?php 
-           
-                        $sqlx= "SHOW COLUMNS FROM process;";     
-                        $resultx = mysqli_query($conn, $sqlx);
-                            $X=0;
-                        while($rowx = mysqli_fetch_assoc($resultx) ){ 
-                                $columna2[$X]=$rowx['Field'];
-                                $X++;
-                        }
-                        $totalfilas="0";
+                        <?php 
+            
+                            $sqlx= "SHOW COLUMNS FROM process;";     
+                            $resultx = mysqli_query($conn, $sqlx);
+                                $X=0;
+                            while($rowx = mysqli_fetch_assoc($resultx) ){ 
+                                    $columna2[$X]=$rowx['Field'];
+                                    $X++;
+                            }
+                            $totalfilas="0";
 
-                        if (isset($lotn) AND $lotn<> 'sintotal') {
-                            $sql= "SELECT * FROM process WHERE lot_number = '$lotn'";
-                            $result1 = mysqli_query($conn, $sql);
-                            $totalfilas = mysqli_num_rows($result1);
-                        } else if (isset($lotn) AND $lotn == 'sintotal') {
-                            $sql= "SELECT * FROM process WHERE saved <> 'SI' ORDER BY id DESC";
-                            $result1 = mysqli_query($conn, $sql);
-                            $totalfilas = mysqli_num_rows($result1);
-                        }
+                            if (isset($lotn) AND $lotn<> 'sintotal') {
+                                $sql= "SELECT * FROM process WHERE lot_number = '$lotn'";
+                                $result1 = mysqli_query($conn, $sql);
+                                $totalfilas = mysqli_num_rows($result1);
+                            } else if (isset($lotn) AND $lotn == 'sintotal') {
+                                $sql= "SELECT * FROM process WHERE saved <> 'SI' ORDER BY id DESC";
+                                $result1 = mysqli_query($conn, $sql);
+                                $totalfilas = mysqli_num_rows($result1);
+                            }
 
-                
-                        if ($totalfilas>0) {
-                                    $j=0;
-                            while($fila = mysqli_fetch_array($result1) ){ 
-                                    $j++; $valor="";
-                                    $datex = date('m-d-Y', strtotime($fila[1]));
-                                    $start_date[$j] = $datex;
-                                    $lotnumber1[$j]= $fila[2]; ?>
-                                <tr onmouseover="loteelegido('<?php echo $lotnumber1[$j] ?>')">
-                                    <td style='font-size:1.3rem'><?php echo $start_date[$j] ?></td>
-                                    <td><?php echo $lotnumber1[$j] ?></td>
+                    
+                            if ($totalfilas>0) {
+                                        $j=0;
+                                while($fila = mysqli_fetch_array($result1) ){ 
+                                        $j++; $valor="";
+                                        $datex = date('m-d-Y', strtotime($fila[1]));
+                                        $start_date[$j] = $datex;
+                                        $lotnumber1[$j]= $fila[2]; ?>
+                                    <tr onmouseover="loteelegido('<?php echo $lotnumber1[$j] ?>')">
+                                        <td style='font-size:1.3rem'><?php echo $start_date[$j] ?></td>
+                                        <td><?php echo $lotnumber1[$j] ?></td>
 
-                                    <?php for ($i=3; $i < 21; $i++) { 
-                                
-                                    if ($fila[$i]<>"") {  
+                                        <?php for ($i=3; $i < 21; $i++) { 
+                                    
+                                        if ($fila[$i]<>"") {  
 
-                                            $celda=$fila[$i];  
-                                            if ( isset($datosx[$celda]['user']) ) {
+                                                $celda=$fila[$i];  
+                                                if ( isset($datosx[$celda]['user']) ) {
 
-                                                $user1=$datosx[$celda]['user'];
-                                                $color1=$datosx[$celda]['color']; 
-                                                $fecha1=$datosx[$celda]['fecha'];
-                                                $hora1=$datosx[$celda]['hora'];
-                                                $valor1=$datosx[$celda]['valor']; 
-                                                $problem1=$datosx[$celda]['problem']; 
-                                                /* $repaired1=$datosx[$celda]['repaired']; */ 
-                                                $mensaje1=  "User: ".$user1."<br> Date: ".$fecha1."<br> Hour: ".$hora1."<br> Comment: ".$problem1; 
+                                                    $user1=$datosx[$celda]['user'];
+                                                    $color1=$datosx[$celda]['color']; 
+                                                    $fecha1=$datosx[$celda]['fecha'];
+                                                    $hora1=$datosx[$celda]['hora'];
+                                                    $valor1=$datosx[$celda]['valor']; 
+                                                    $problem1=$datosx[$celda]['problem']; 
+                                                    /* $repaired1=$datosx[$celda]['repaired']; */ 
+                                                    $mensaje1=  "User: ".$user1."<br> Date: ".$fecha1."<br> Hour: ".$hora1."<br> Comment: ".$problem1; 
+
+                                                } else {
+
+                                                    $user1=""; $color1=""; $fecha1=""; $hora1=""; $problem1=""; $repaired1="";  $mensaje1= "";
+                                                    
+                                                }  
+                                                    $color2="white";
+
+                                                if ($columna2[$i]=='counter') {  $color1="white"; $color2="black";}
+                                                if ($columna2[$i]=='total_blister_in_shippers') {  $color1="white"; $color2="black";}
+                                                if ($columna2[$i]=='reserve_release_samples') {   $color1="white"; $color2="black";}
+                                                if ($columna2[$i]=='qc_sample') {   $color1="white"; $color2="black";}
+                                                if ($columna2[$i]=='production_yield') {   $color1="white"; $color2="black";}
+                                                if ($columna2[$i]=='process_yield') {   $color1="white"; $color2="black";}
+
+                                                if ($color1=="red") { ?>
+
+                                        <td style='background:red;color:<?php echo $color2?>;text-align:center'
+                                            onmouseover="showdatay('<?php echo $mensaje1 ?>'),celdaelegida('<?php echo $columna2[$i] ?>','<?php echo $color1 ?>')">
+                                            <?php echo $valor1 ?></td>
+
+                                        <?php } else {
+                                                    
+                                                    /* if ($columna2[$i]<>'counter' AND $columna2[$i]<>'total_blister_in_shippers'){ */ ?>
+
+                                        <td style='background:<?php echo $color1 ?>;color:<?php echo $color2?>;text-align:center'
+                                            onmouseover="showdatay('<?php echo $mensaje1 ?>'),celdaelegida('<?php echo $columna2[$i] ?>','<?php echo $color1 ?>')">
+                                            <?php echo $valor1 ?></td>
+
+                                        <?php /* }  else { */ ?>
+                                        <!-- <td style='background:<?php echo $color1 ?>;color:<?php echo $color2?>;text-align:center'><?php echo $valor1 ?></td> -->
+                                        <?php /* } */ 
+                                                
+                                                } 
+                                                                                                        
+                                            } else {
+                                                    if ($fila[$i-1]=="") {
+                                                        $colorx="nocolor";
+                                                    } else {
+                                                        $colorx="white";
+                                                    }
+                                                    
+                                                ?><td
+                                            onmouseover="showdatay(''),celdaelegida('<?php echo $columna2[$i] ?>','<?php echo $colorx ?>')">
+                                        </td><?php 
+                                            
+                                            }
+
+                                        }
+                                                                                            
+                                            if ($fila['end_date']<= "1900-01-01") {
+                                            
+                                                if ($fila[$i-1]<>"") { ?>
+
+                                        <td> <button style='padding:5px;color:red' onclick="finalizar('<?php echo $lotnumber1[$j] ?>')">
+                                                End </button> </td>
+                                        <?php } else { ?>
+                                        <td> </td>
+                                        <?php  }  echo "</tr>";
 
                                             } else {
-
-                                                $user1=""; $color1=""; $fecha1=""; $hora1=""; $problem1=""; $repaired1="";  $mensaje1= "";
-                                                
-                                            }  
-                                                $color2="white";
-
-                                            if ($columna2[$i]=='counter') {  $color1="white"; $color2="black";}
-                                            if ($columna2[$i]=='total_blister_in_shippers') {  $color1="white"; $color2="black";}
-                                            if ($columna2[$i]=='reserve_release_samples') {   $color1="white"; $color2="black";}
-                                            if ($columna2[$i]=='qc_sample') {   $color1="white"; $color2="black";}
-                                            if ($columna2[$i]=='production_yield') {   $color1="white"; $color2="black";}
-                                            if ($columna2[$i]=='process_yield') {   $color1="white"; $color2="black";}
-
-                                            if ($color1=="red") { ?>
-
-                                    <td style='background:red;color:<?php echo $color2?>;text-align:center'
-                                        onmouseover="showdatay('<?php echo $mensaje1 ?>'),celdaelegida('<?php echo $columna2[$i] ?>','<?php echo $color1 ?>')">
-                                        <?php echo $valor1 ?></td>
-
-                                    <?php } else {
-                                                
-                                                /* if ($columna2[$i]<>'counter' AND $columna2[$i]<>'total_blister_in_shippers'){ */ ?>
-
-                                    <td style='background:<?php echo $color1 ?>;color:<?php echo $color2?>;text-align:center'
-                                        onmouseover="showdatay('<?php echo $mensaje1 ?>'),celdaelegida('<?php echo $columna2[$i] ?>','<?php echo $color1 ?>')">
-                                        <?php echo $valor1 ?></td>
-
-                                    <?php /* }  else { */ ?>
-                                    <!-- <td style='background:<?php echo $color1 ?>;color:<?php echo $color2?>;text-align:center'><?php echo $valor1 ?></td> -->
-                                    <?php /* } */ 
                                             
-                                            } 
-                                                                                                    
-                                        } else {
-                                                if ($fila[$i-1]=="") {
-                                                    $colorx="nocolor";
-                                                } else {
-                                                    $colorx="white";
-                                                }
-                                                
-                                            ?><td
-                                        onmouseover="showdatay(''),celdaelegida('<?php echo $columna2[$i] ?>','<?php echo $colorx ?>')">
-                                    </td><?php 
-                                        
-                                        }
+                                                $fechafin = date('m-d-Y', strtotime($fila['end_date']));
+                                                echo "<td> $fechafin </td></tr>";
+                                            }
+                                            
 
-                                    }
-                                                                                        
-                                        if ($fila['end_date']<= "1900-01-01") {
-                                        
-                                            if ($fila[$i-1]<>"") { ?>
+                                    } ?>
 
-                                    <td> <button style='padding:5px;color:red' onclick="finalizar('<?php echo $lotnumber1[$j] ?>')">
-                                            End </button> </td>
-                                    <?php } else { ?>
-                                    <td> </td>
-                                    <?php  }  echo "</tr>";
-
-                                        } else {
-                                        
-                                            $fechafin = date('m-d-Y', strtotime($fila['end_date']));
-                                            echo "<td> $fechafin </td></tr>";
-                                        }
-                                        
-
-                                } ?>
-
-                    <?php }
-                        
-                ?>
-                <tbody>
-            </table>
+                        <?php }
+                            
+                    ?>
+                    <tbody>
+                </table>
+            </div>
         </div>
-    </div>
 
     </section>
 
