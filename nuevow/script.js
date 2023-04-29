@@ -178,3 +178,6 @@ window.addEventListener("resize", () => {
     console.log(comentario);
     document.getElementById("commentsx").innerHTML = comentario;
  }
+ function openModal() {
+    window.parent.document.getElementById("btn-modal-modalAddProc").click();
+ }

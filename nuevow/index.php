@@ -58,9 +58,9 @@
   ?>
 
 <style>
-.cursor-pointer {
-    cursor: pointer;
-}
+    .cursor-pointer {
+        cursor: pointer;
+    }
 </style>
 
 
@@ -68,7 +68,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -122,7 +122,9 @@
 
     <input type="hidden" name="concolor" id="concolor">
 
-    <div><?php echo  $nivelx."  -  ".$userx ?></div>
+    <div>
+        <?php echo  $nivelx."  -  ".$userx ?>
+    </div>
 
     <input type="hidden" name="opcionx" id="opcionx" value="home">
 
@@ -198,30 +200,33 @@
     <section class="section-2" id="section-2" style="display: none;">
         <div class="container-fluid d-flex flex-column text-center">
             <?php echo $nivelx. " - " .$userx; ?>
-                <div class="row" style="">
+            <div class="row" style="">
                 <h1 class="section-heading section-2-heading">Filling Process</h1>
+            </div>
+            <div class="row align-self-center w-100 mt-1 mb-1">
+                <div class="col-10 w-100">
+                    <!-- onclick="go_section('section-2b')" -->
+                    <button class="btn btn-primary" style="z-index: 5" data-bs-toggle="modal"
+                        data-bs-target="#modalAddProcess">
+                        Add Process
+                    </button>
                 </div>
-                <div class="row align-self-center w-100 mt-1 mb-1">
-                    <div class="col-10 w-100">
-                        <button class="btn btn-primary" style="z-index: 5" data-bs-toggle="modal" data-bs-target="#modalAddProcess" onclick="go_section('section-2b')">
-                            Add Process
-                        </button>
-                    </div> 
-                </div>
-                <select class="form-select mt-1 mb-5" name="savedx2" id="savedx2" onchange="verhistorico(opcionx.value,this.value)" style="width:15rem;align-self: center;">
-                    <option value=''></option>
-                    <?php  $sqlzb= "SELECT DISTINCT lot_number FROM process WHERE saved='SI'";
+            </div>
+            <select class="form-select mt-1 mb-5" name="savedx2" id="savedx2"
+                onchange="verhistorico(opcionx.value,this.value)" style="width:15rem;align-self: center;">
+                <option value=''></option>
+                <?php  $sqlzb= "SELECT DISTINCT lot_number FROM process WHERE saved='SI'";
                         $resultb = mysqli_query($conn, $sqlzb);
                             while($rowx = mysqli_fetch_array($resultb) ){ 
                                 $lotnumber= $rowx[0];
                                 echo "<option value='$lotnumber'>$lotnumber</option>"; 
                             } ?>
-                    <option value='sintotal'>Current</option>
+                <option value='sintotal'>Current</option>
 
-                </select>
+            </select>
             <div class="table-responsive">
-                <table class="table table-bordered border-black">
-                    <thead class="bg-info h-auto">
+                <table class="table table-bordered border-dark">
+                    <thead class="bg-dark h-auto text-white">
                         <tr>
                             <th class="titulox2 p-0 m-0 align-middle">Start Date</th>
                             <th class="titulox2 p-0 m-0 align-middle">Lot Number</th>
@@ -278,11 +283,15 @@
                                         $datex = date('m-d-Y', strtotime($fila[1]));
                                         $start_date[$j] = $datex;
                                         $lotnumber1[$j]= $fila[2]; ?>
-                                    <tr onmouseover="loteelegido('<?php echo $lotnumber1[$j] ?>')">
-                                        <td style='font-size:1.3rem'><?php echo $start_date[$j] ?></td>
-                                        <td><?php echo $lotnumber1[$j] ?></td>
+                        <tr onmouseover="loteelegido('<?php echo $lotnumber1[$j] ?>')">
+                            <td style='font-size:1.3rem'>
+                                <?php echo $start_date[$j] ?>
+                            </td>
+                            <td>
+                                <?php echo $lotnumber1[$j] ?>
+                            </td>
 
-                                        <?php for ($i=3; $i < 21; $i++) { 
+                            <?php for ($i=3; $i < 21; $i++) { 
                                     
                                         if ($fila[$i]<>"") {  
 
@@ -314,21 +323,23 @@
 
                                                 if ($color1=="red") { ?>
 
-                                        <td style='background:red;color:<?php echo $color2?>;text-align:center'
-                                            onmouseover="showdatay('<?php echo $mensaje1 ?>'),celdaelegida('<?php echo $columna2[$i] ?>','<?php echo $color1 ?>')">
-                                            <?php echo $valor1 ?></td>
+                            <td style='background:red;color:<?php echo $color2?>;text-align:center'
+                                onmouseover="showdatay('<?php echo $mensaje1 ?>'),celdaelegida('<?php echo $columna2[$i] ?>','<?php echo $color1 ?>')">
+                                <?php echo $valor1 ?>
+                            </td>
 
-                                        <?php } else {
+                            <?php } else {
                                                     
                                                     /* if ($columna2[$i]<>'counter' AND $columna2[$i]<>'total_blister_in_shippers'){ */ ?>
 
-                                        <td style='background:<?php echo $color1 ?>;color:<?php echo $color2?>;text-align:center'
-                                            onmouseover="showdatay('<?php echo $mensaje1 ?>'),celdaelegida('<?php echo $columna2[$i] ?>','<?php echo $color1 ?>')">
-                                            <?php echo $valor1 ?></td>
+                            <td style='background:<?php echo $color1 ?>;color:<?php echo $color2?>;text-align:center'
+                                onmouseover="showdatay('<?php echo $mensaje1 ?>'),celdaelegida('<?php echo $columna2[$i] ?>','<?php echo $color1 ?>')">
+                                <?php echo $valor1 ?>
+                            </td>
 
-                                        <?php /* }  else { */ ?>
-                                        <!-- <td style='background:<?php echo $color1 ?>;color:<?php echo $color2?>;text-align:center'><?php echo $valor1 ?></td> -->
-                                        <?php /* } */ 
+                            <?php /* }  else { */ ?>
+                            <!-- <td style='background:<?php echo $color1 ?>;color:<?php echo $color2?>;text-align:center'><?php echo $valor1 ?></td> -->
+                            <?php /* } */ 
                                                 
                                                 } 
                                                                                                         
@@ -339,9 +350,11 @@
                                                         $colorx="white";
                                                     }
                                                     
-                                                ?><td
-                                            onmouseover="showdatay(''),celdaelegida('<?php echo $columna2[$i] ?>','<?php echo $colorx ?>')">
-                                        </td><?php 
+                                                ?>
+                            <td
+                                onmouseover="showdatay(''),celdaelegida('<?php echo $columna2[$i] ?>','<?php echo $colorx ?>')">
+                            </td>
+                            <?php 
                                             
                                             }
 
@@ -351,11 +364,12 @@
                                             
                                                 if ($fila[$i-1]<>"") { ?>
 
-                                        <td> <button style='padding:5px;color:red' onclick="finalizar('<?php echo $lotnumber1[$j] ?>')">
-                                                End </button> </td>
-                                        <?php } else { ?>
-                                        <td> </td>
-                                        <?php  }  echo "</tr>";
+                            <td> <button style='padding:5px;color:red'
+                                    onclick="finalizar('<?php echo $lotnumber1[$j] ?>')">
+                                    End </button> </td>
+                            <?php } else { ?>
+                            <td> </td>
+                            <?php  }  echo "</tr>";
 
                                             } else {
                                             
@@ -366,7 +380,7 @@
 
                                     } ?>
 
-                        <?php }
+                            <?php }
                             
                     ?>
                     <tbody>
@@ -377,9 +391,9 @@
     </section>
 
     <!-- Section 3 -->
-    <section class="section-2" id="section-3" style="display: none;">
+    <section class="section-2 bg-danger" id="section-3" style="display: none;">
 
-        <iframe name="fillingdaily" src="daily.php" scrolling="no" frameborder="0" width="100%" height="5000"></iframe>
+        <iframe name="fillingdaily" src="daily.php" style="background-color: aqua;" scrolling="no" frameborder="0" width="100%" height="5000"></iframe>
 
     </section>
     <!-- End of Section 3 -->
@@ -399,29 +413,71 @@
         </div>
     </section>
     <!-- modal add process -->
-    <div class="modal fade" id="modalAddProcess" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="modalAddProcess" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Process</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Process</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="contact-form center" id="f_filling1" method="post" action="consultas.php"
+                        enctype="multipart/form-data" target="consultasx">
+                        <input class="form-control" type="hidden" name="filling1" id="filling1" value="X" />
+                        <label class="form-label" for="lot_number1">Lot Number</label>
+                        <input class="form-control" type="text" placeholder="Lot Number" name="lot_number1"
+                            id="lot_number1" />
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary"
+                        onclick="enviarform('f_filling1','section-2')">Submit</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <form class="contact-form center" id="f_filling1" method="post" action="consultas.php"
-                    enctype="multipart/form-data" target="consultasx">
-                    <input class="form-control" type="hidden" name="filling1" id="filling1" value="X" />
-                    <label class="form-label" for="lot_number1">Lot Number</label>
-                    <input class="form-control" type="text" placeholder="Lot Number" name="lot_number1" id="lot_number1" />
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" onclick="enviarform('f_filling1','section-2')">Submit</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
+    <!-- MODAL modalAddProc -->
+    <button type="button" id="btn-modal-modalAddProc" hidden="true" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#modalAddProc"></button>
+    <div class="modal fade" id="modalAddProc" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog w-auto">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Process</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="contact-form center" id="f_filling2" method="post" action="consultas.php"
+                        enctype="multipart/form-data" target="consultasx">
+                        <input type="hidden" class="form-control" name="filling2" id="filling2" value='X' />
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="form-label" for="shift2">Shift</label>
+                                <input type="text" class="form-control" placeholder="Shift" name="shift2" id="shift2" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="form-label" for="lot_number2">Lot Number</label>
+                                <input type="text" class="form-control" placeholder="Lot Number" name="lot_number2"
+                                id="lot_number2" />                            
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary"
+                        onclick="enviarform('f_filling1','section-2')">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- end modal section -->
     <section class="section-2c" id="section-2c" style="display:none">
         <button class="botonx" style="margin-left:50%" onclick="cerrarsection()">X</button>
         <h2 class="section-heading">Add Process Status</h2>
@@ -517,21 +573,21 @@
     <script src="contextmenu.js"></script>
 
     <script>
-    function cerrarsection() {
-        document.getElementById("section-2b").style.display = "none";
-        document.getElementById("section-2c").style.display = "none";
-        document.getElementById("section-2").style.display = "flex";
-    }
+        function cerrarsection() {
+            document.getElementById("section-2b").style.display = "none";
+            document.getElementById("section-2c").style.display = "none";
+            document.getElementById("section-2").style.display = "flex";
+        }
     </script>
 
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
     integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous">
-</script>
+    </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
     integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous">
-</script>
+    </script>
 
 
 </html>
