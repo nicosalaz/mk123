@@ -122,7 +122,7 @@
 
 
 
-<div class="container-fluid d-flex flex-column bg-body-secondary p-0 m-0">
+<div class="container-fluid d-flex flex-column  p-0 m-0">
   <!-- Section 1 -->
 
   <!-- Section 3 -->
@@ -376,7 +376,7 @@
                       ?>
             <tr>
               <td colspan="24">
-                <textarea name="commentsx" id="commentsx" style='width:100%;height:10rem'></textarea>
+                <textarea class="form-control" name="commentsx" id="commentsx" style='width:100%;height:10rem'></textarea>
               </td>
             </tr>
           <tbody>
@@ -411,10 +411,9 @@
   </div> -->
 
   <section class="section-3c" id="section-3c"
-    style="width: auto;height: auto ;display:none;background-color: aquamarine; display: flex; flex-flow: column">
-    <div class="row w-100 bg-black d-flex justify-content-end">
-        <button class="btn btn-danger text-center" style="width: 50px;" onclick="cerrarsection()">X</button>
-    </div>
+    style="display:none; flex-flow: column; background-color: transparent">
+    <div class="row d-flex justify-content-end bg-white" style="width: 100%;">
+      <button type="button" class="btn-close" aria-label="Close"onclick="cerrarsection()"></button>
     </div>
     <iframe id="observationsx" name="observationsx" src="observations.php" scrolling="no" frameborder="0" width="100%"
       height="1300" style="padding: 0; margin: 0;"></iframe>

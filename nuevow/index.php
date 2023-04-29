@@ -122,7 +122,7 @@
 
     <input type="hidden" name="concolor" id="concolor">
 
-    <div>
+    <div class="">
         <?php echo  $nivelx."  -  ".$userx ?>
     </div>
 
